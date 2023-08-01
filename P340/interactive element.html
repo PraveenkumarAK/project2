@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Button</title>
+    <script src="script.js"></script>
+    <style>
+        .colorful-text {
+            color: #f7f4f4;
+        }
+        body{
+  background-color:#05b7f7;
+  background-image: url("tianyi-ma-WiONHd_zYI4-unsplash.jpg");
+  background-size: cover;
+}
+    </style>
+</head>
+<body >
+    <center>
+    <h1 id="myText" class="colorful-text">This text can change color!</h1>
+    <button onclick="changeColor()">Change Color</button>
+    </center>
+    <script lan="javaScript">
+    function changeColor() 
+    {
+        var text = document.getElementById("myText");
+            if (text.style.color === 'white') 
+            {
+                text.style.color = 'violet';
+            }   
+            else 
+            {
+                text.style.color = 'white';
+            }
+        }
+    </script>
+</body>
+</html>

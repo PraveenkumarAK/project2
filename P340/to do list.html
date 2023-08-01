@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+         body{
+  background-color:#f4eced;
+  background-image: url("rupixen-com-komB8F93618-unsplash.jpg");
+  background-size: cover;
+}
+ul{
+    list-style-position: inside;
+}
+.colorful-text {
+            color: #ebeded;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1 class="colorful-text">To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Add a new task...">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList" class="colorful-text">
+    <script >
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const taskList = document.getElementById("taskList");
+            const newTaskText = taskInput.value.trim();
+
+            if (newTaskText === "") {
+                alert("Please enter a valid task.");
+                return;
+            }
+
+            const newTask = document.createElement("li");
+            newTask.textContent = newTaskText;
+            newTask.onclick = function () {
+                this.classList.toggle("done");
+            };
+
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.onclick = function () {
+                taskList.removeChild(newTask);
+            };
+
+            newTask.appendChild(removeButton);
+            taskList.appendChild(newTask);
+
+            taskInput.value = "";
+        }
+    </script>
+</ul>
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+    </center>
+</body>
+</html>
